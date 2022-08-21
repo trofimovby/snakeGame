@@ -13,7 +13,7 @@ let score = 0;
 
 let food = {
     x: Math.floor((Math.random() * 17 + 1)) * box,
-    y: Math.floor((Math.random() * 15 + 1)) * box,
+    y: Math.floor((Math.random() * 15 + 3)) * box,
 };
 
 let snake = [];
@@ -31,6 +31,10 @@ function drawGame() {
         ctx.fillStyle = 'green';
         ctx.fillRect(snake[i].x, snake[i].y, box, box);
     }
+
+    ctx.fillStyle = 'white';
+    ctx.font = '50px Arial';
+    ctx.fillText(score, box * 2.5, box * 1.7);
 }
 
 let game = setInterval(drawGame, 100);
